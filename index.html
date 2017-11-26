@@ -22,37 +22,30 @@
         </header>
         <div class="main">
             <form>
-                <span class="text">Ile pali średnio Twoj pojazd (l/100km):</span>
+                <span class="text">Ile pali średnio Twój pojazd (l/100km):</span>
                     <input type="text" name="Average" id="average"> <br>
                    Rodzaj paliwa:<br>
                     <input type="radio" name="fuel" value="on" checked> ON
-                    <input type="radio" name="fuel" value="pb95"> PB95
-                    <input type="radio" name="fuel" value="pb98"> PB98
+                    <input type="radio" name="fuel" value="pb95"> Pb95
+                    <input type="radio" name="fuel" value="pb98"> Pb98
                     <input type="radio" name="fuel" value="lpg"> LPG<br>
                <span class="text">Cena paliwa:</span>
                     <input type="text" name="fuelCost" id="fuelCost"><br>
-               <span class="text">Skad Podróżujesz:</span>
+               <span class="text">Skąd Podróżujesz:</span>
                     <input type="text" name="Source" id="Source"> <br>
                 <span class="text">Cel podróży:</span>
                     <input type="text" name="Destination" id="Destination"> <br>
-                    <input type="button" value="Wyznacz trasę" onclick="allMap()" />
-                    <div id="Distance">
-                    </div>
-                    <div id="fuelprice">Przybliżony całkowity koszt Twojego przejazdu to:
-                    </div>
-            
+                    <input type="button" class="button" value="Wyznacz trasę" onclick="allMap(), pali()" /><br>
+                   <span class="text">Odległość:</span><div id="Distance">----</div><br>
+                   <span class="text">Czas podróży:</span><div id="Duration">----</div><br>
+                   <span class="text">Przybliżony całkowity koszt<br>Twojego przejazdu to:</span><div id="fuelPrice">----</div>
             </form>
-            <div id="map">
-  
-            </div>
+            <div id="map"></div>
         </div>
-        
-
         <footer>
             2017 design by <a href="http://www.trustme.com.pl" target="blank">trustME&copy;</a>
         </footer>
-
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2eMFNiQX3BGha_amJMoP0VXf6Rpr6Xjk&libraries=places"></script>
-    <script src="ilezaplace.js" type="text/javascript"></script> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2eMFNiQX3BGha_amJMoP0VXf6Rpr6Xjk&libraries=places"></script>
+<script src="ilezaplace.js" type="text/javascript"></script> 
 </body>

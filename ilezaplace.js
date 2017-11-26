@@ -1,11 +1,14 @@
+var ave;
+var price;
+var liczba;
+var resultFuel;
 var source;
 var destination;
 var distance;
-var spalanie = 6.88;
-var cena = 4.55;
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
-    google.maps.event.addDomListener(window, 'load', function () {
+
+google.maps.event.addDomListener(window, 'load', function () {
     new google.maps.places.Autocomplete(document.getElementById('Source', 'Destination'));
     new google.maps.places.SearchBox(document.getElementById('Source'));
     new google.maps.places.SearchBox(document.getElementById('Destination'));
@@ -46,20 +49,29 @@ function allMap() {
             distance = response.rows[0].elements[0].distance.text;
             var duration = response.rows[0].elements[0].duration.text;
             var distanceResult = document.getElementById("Distance");
-            distanceResult.innerHTML = "";
-            distanceResult.innerHTML += "Odleglość: " + distance + "<br />";
-            distanceResult.innerHTML += "Czas podróży:" + duration;
+            var durationResult = document.getElementById("Duration");
+            distanceResult.innerHTML = distance;
+            durationResult.innerHTML = duration;
  
         } else {
             alert("Bez samolotu nie da rady!");
         }
 
     });
-    var ave = document.getElementById('average').value;
-    var price = document.getElementById('fuelCost').value;
-    var dystans = parseInt(distance);
-    var resultFuel = spalanie*cena*parseInt(distance);
-    var finallyResult = document.getElementById("fuelprice");
-   // final lyResult.innerHTML =resultFuel;
+
 }
 allMap();
+
+function pali()
+{
+    setTimeout(function()
+{
+
+    ave = document.getElementById('average').value;
+    price = document.getElementById('fuelCost').value;
+    liczba= parseInt(distance,10);
+    resultFuel = [(price*ave)/100]*liczba;
+    var finallyResult = document.getElementById("fuelPrice");
+    finallyResult.innerHTML =resultFuel.toFixed(2) + " zł";
+    
+}, 1000)};
