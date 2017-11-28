@@ -1,7 +1,8 @@
 var ave;
 var price;
-var liczba;
+var parseDistance;
 var resultFuel;
+var myFuel;
 var source;
 var destination;
 var distance;
@@ -14,6 +15,15 @@ google.maps.event.addDomListener(window, 'load', function () {
     new google.maps.places.SearchBox(document.getElementById('Destination'));
     directionsDisplay = new google.maps.DirectionsRenderer({ 'draggable': true });
 });
+(function () {
+    myFuel = document.getElementsByName("fuel");
+    for(var i = 0; i < myFuel.length; i++){
+        myFuel[i].onclick = function(){
+            price = this.value
+            document.getElementById('fuelCost').innerText = price + " zł";
+    };
+};
+})();
 
 function allMap() {
     var warsaw = {lat: 52.23, lng: 21.01};
@@ -62,15 +72,16 @@ function allMap() {
 }
 allMap();
 
-function pali()
+
+
+
+function result()
 {
     setTimeout(function()
 {
-
-    ave = document.getElementById('average').value;
-    price = document.getElementById('fuelCost').value;
-    liczba= parseInt(distance,10);
-    resultFuel = [(price*ave)/100]*liczba;
+    ave = document.getElementById('average').value.replace(/,/g, '.');
+    parseDistance = distance.substr(0, distance.length - 3).replace(/\s+/g, '').replace(/,/g, '.');
+    resultFuel = [(price*ave)/100]*parseDistance;
     var finallyResult = document.getElementById("fuelPrice");
     finallyResult.innerHTML =resultFuel.toFixed(2) + " zł";
     

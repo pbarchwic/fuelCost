@@ -16,29 +16,29 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">
-                    za ile dojadę?
-            </div>
+            <div class="logo">za ile dojadę?</div>
         </header>
         <div class="main">
             <form>
                 <span class="text">Ile pali średnio Twój pojazd (l/100km):</span>
                     <input type="text" name="Average" id="average"> <br>
-                   Rodzaj paliwa:<br>
-                    <input type="radio" name="fuel" value="on" checked> ON
-                    <input type="radio" name="fuel" value="pb95"> Pb95
-                    <input type="radio" name="fuel" value="pb98"> Pb98
-                    <input type="radio" name="fuel" value="lpg"> LPG<br>
-               <span class="text">Cena paliwa:</span>
-                    <input type="text" name="fuelCost" id="fuelCost"><br>
+                <span class="text"> Rodzaj paliwa:</span><br>
+                    <div class="radio">
+                        <input type="radio" name="fuel" id="fuel" value="4.57"> ON
+                        <input type="radio" name="fuel" id="fuel" value="4.69" > Pb95
+                        <input type="radio" name="fuel" id="fuel" value="4.99" > Pb98
+                        <input type="radio" name="fuel" id="fuel" value="2.16" > LPG<br>
+                    </div>
+                <span class="text">Cena paliwa:</span>
+                    <span class="text" id="fuelCost">----</span><br>
                <span class="text">Skąd Podróżujesz:</span>
                     <input type="text" name="Source" id="Source"> <br>
                 <span class="text">Cel podróży:</span>
                     <input type="text" name="Destination" id="Destination"> <br>
-                    <input type="button" class="button" value="Wyznacz trasę" onclick="allMap(), pali()" /><br>
-                   <span class="text">Odległość:</span><div id="Distance">----</div><br>
-                   <span class="text">Czas podróży:</span><div id="Duration">----</div><br>
-                   <span class="text">Przybliżony całkowity koszt<br>Twojego przejazdu to:</span><div id="fuelPrice">----</div>
+                    <input type="button" class="button" value="Wyznacz trasę" onclick="allMap(), result()" /><br>
+                    <span class="text">Odległość:</span><div id="Distance">----</div><br>
+                    <span class="text">Czas podróży:</span><div id="Duration">----</div><br>
+                    <span class="text">Przybliżony koszt przejazdu:</span><div id="fuelPrice">----</div>
             </form>
             <div id="map"></div>
         </div>

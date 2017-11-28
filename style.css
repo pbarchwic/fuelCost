@@ -62,8 +62,14 @@ input
     height: 20px;
     w idth: 300px;
     font-size: 12px;
+    border-top: none;
     bo x-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.75);
 }
+#fuelCost
+{
+    height: 30px;
+}
+
 .button
 {
     background: rgb(0, 140, 186);
